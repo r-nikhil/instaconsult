@@ -1,7 +1,7 @@
 <?php
 
 // uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
+ Yii::setPathOfAlias('local','path/to/local-folder');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -11,6 +11,14 @@ return array(
 
 	// preloading 'log' component
 	'preload'=>array('log'),
+
+	//alias
+
+	'aliases' => array(
+       
+        'RestfullYii' =>realpath(__DIR__ . '/../extensions/starship/RestfullYii'),
+       
+    ),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -39,7 +47,7 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -47,8 +55,11 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
+			 'rules' => require(
+                dirname(__FILE__).'/../extensions/starship/RestfullYii/config/routes.php'
+            ),
 		),
-		*/
+		
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
