@@ -36,12 +36,7 @@ public function actions()
 } 
 
 
-
-
-
-
-
-	public function accessRules()
+	public function _accessRules()
 	{
 
 
@@ -66,9 +61,7 @@ public function actions()
 			array('allow', 'actions'=>array('REST.GET', 'REST.PUT', 'REST.POST', 'REST.DELETE'),
         'users'=>array('*'),
         ),
-        array('deny',  // deny all users
-            'users'=>array('*'),
-        ),
+       
 		);
 	}
 
