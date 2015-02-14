@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Instaconsult',
+	'name'=>'My Web Application',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -16,53 +16,41 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'ext.wrest.*',
 	),
 
-	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-		
-		'gii'=>array(
-			'class'=>'system.gii.GiiModule',
-			'password'=>'yolo12345',
-			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
-		),
-		
-	),
 
 	// application components
 	'components'=>array(
-
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-
 		// uncomment the following to enable URLs in path-format
-		
+
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-				array('api/<model>/delete', 'pattern'=>'api/<model:\w+>/<_id:\d+>', 'verb'=>'DELETE'),
-        		array('api/<model>/update', 'pattern'=>'api/<model:\w+>/<_id:\d+>', 'verb'=>'PUT'),
-		        array('api/<model>/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
-		        array('api/<model>/get', 'pattern'=>'api/<model:\w+>/<_id:\d+>', 'verb'=>'GET'),
-		        array('api/<model>/create', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
 			),
 		),
-		
 
-		// database settings are configured in database.php
-		'db'=>require(dirname(__FILE__).'/database.php'),
-
-		'errorHandler'=>array(
-			// use 'site/error' action to display errors
-			'errorAction'=>'site/error',
+		'assetManager' => array(
+			'basePath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'../assets',
 		),
+		//'db'=>array(
+		//	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+		//),
+		// uncomment the following to use a MySQL database
+		
+//		'db'=>array(
+//			'connectionString' => 'mysql:host=weavora-1;dbname=wfrom2',
+//			'emulatePrepare' => true,
+//			'username' => 'dev',
+//			'password' => 'dev',
+//			'charset' => 'utf8',
+//		),
 
 		'log'=>array(
 			'class'=>'CLogRouter',
@@ -79,13 +67,9 @@ return array(
 				*/
 			),
 		),
-
 	),
 
-	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
 	'params'=>array(
-		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
 	),
 );
