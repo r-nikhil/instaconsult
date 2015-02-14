@@ -1,0 +1,112 @@
+2015/02/14 05:24:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project
+---
+2015/02/14 05:37:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project
+---
+2015/02/14 05:41:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project
+---
+2015/02/14 05:44:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project
+---
+2015/02/14 05:46:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project/1
+---
+2015/02/14 05:46:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project/1
+---
+2015/02/14 05:48:31 [error] [php] include(ERestController.php): failed to open stream: No such file or directory (C:\wamp\www\instaconsult\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\wamp\www\instaconsult\c1\protected\controllers\ProjectController.php(4): spl_autoload_call()
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(354): require()
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\instaconsult\c1\index.php(13): CWebApplication->run()
+REQUEST_URI=/instaconsult/c1/index.php/api/project/1
+in C:\wamp\www\instaconsult\c1\protected\controllers\ProjectController.php (4)
+in C:\wamp\www\instaconsult\c1\index.php (13)
+2015/02/14 05:49:06 [error] [php] include(ERestController.php): failed to open stream: No such file or directory (C:\wamp\www\instaconsult\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\wamp\www\instaconsult\c1\protected\controllers\ProjectController.php(4): spl_autoload_call()
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(354): require()
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\instaconsult\c1\index.php(13): CWebApplication->run()
+REQUEST_URI=/instaconsult/c1/index.php/api/project
+in C:\wamp\www\instaconsult\c1\protected\controllers\ProjectController.php (4)
+in C:\wamp\www\instaconsult\c1\index.php (13)
+2015/02/14 05:50:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project/1
+---
+2015/02/14 05:52:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project/1
+---
+2015/02/14 05:54:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "REST.GET".' in C:\wamp\www\instaconsult\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\instaconsult\yii\framework\web\CController.php(270): CController->missingAction('REST.GET')
+#1 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(282): CController->run('REST.GET')
+#2 C:\wamp\www\instaconsult\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('project/REST.GE...')
+#3 C:\wamp\www\instaconsult\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\instaconsult\c1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/instaconsult/c1/index.php/api/project
+---

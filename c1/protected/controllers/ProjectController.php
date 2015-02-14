@@ -16,6 +16,10 @@ class ProjectController extends Controller
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
+			array(
+                'RestfullYii.filters.ERestFilter + 
+                REST.GET, REST.PUT, REST.POST, REST.DELETE, REST.OPTIONS'
+            ),
 		);
 	}
 
@@ -42,6 +46,15 @@ class ProjectController extends Controller
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
+		array('allow', 'actions'=>array('REST.GET', 'REST.PUT', 'REST.POST', 'REST.DELETE', 'REST.OPTIONS'),
+            'users'=>array('*'),
+            ),
+            array('deny',  // deny all users
+                'users'=>array('*'),
+            ),		
+
+
+
 		);
 	}
 
@@ -54,6 +67,11 @@ class ProjectController extends Controller
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+	
+return array(
+            'REST.'=>'RestfullYii.actions.ERestActionProvider',
+        );
+
 	}
 
 	/**
@@ -77,6 +95,10 @@ class ProjectController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+	return array(
+            'REST.'=>'RestfullYii.actions.ERestActionProvider',
+        );
+
 	}
 
 	/**
@@ -86,6 +108,9 @@ class ProjectController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		 return array(
+            'REST.'=>'RestfullYii.actions.ERestActionProvider',
+        );
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -110,6 +135,9 @@ class ProjectController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		 return array(
+            'REST.'=>'RestfullYii.actions.ERestActionProvider',
+        );
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -126,6 +154,9 @@ class ProjectController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+	return array(
+            'REST.'=>'RestfullYii.actions.ERestActionProvider',
+        );
 	}
 
 	/**
@@ -141,6 +172,9 @@ class ProjectController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	return array(
+            'REST.'=>'RestfullYii.actions.ERestActionProvider',
+        );
 	}
 
 	/**
