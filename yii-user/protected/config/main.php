@@ -6,15 +6,8 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-
-	//note how the extensions's path is entered. 
-	'aliases' => array(
-      
-        'RestfullYii' =>realpath(__DIR__ . '/../extensions/starship/RestfullYii'),
-      
-    ),
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'InstaConsult',
+	'name'=>'My Web Application',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -23,19 +16,20 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'ext.starship.RestfullYii.*',
+		 'application.modules.user.models.*',
+        'application.modules.user.components.*',
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		
+		/*
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'yolo12345',
+			'password'=>'Enter Your Password Here',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		
+		*/
 	),
 
 	// application components
@@ -47,7 +41,7 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		
+		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -55,13 +49,8 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-
-			// importing all the routes
-			'rules' => require(
-                dirname(__FILE__).'/../extensions/starship/restfullyii/config/routes.php'
-            ),
 		),
-		
+		*/
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
@@ -93,6 +82,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'rnikhil2751996@gmail.com',
+		'adminEmail'=>'webmaster@example.com',
 	),
 );
