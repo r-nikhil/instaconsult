@@ -12,7 +12,7 @@ $error=''; // error variable
 	$username=$_POST['username'];
 	$password=$_POST['password'];
 
-$connection = mysqli_connect("localhost", "root", "", "bits-board");
+$connection = mysqli_connect("localhost", "root", "", "instaconsult");
 // To protect MySQL injection for Security purpose
 // $username = stripslashes($username);
 // $password = stripslashes($password);
@@ -21,7 +21,7 @@ $connection = mysqli_connect("localhost", "root", "", "bits-board");
 
 // SQL query to fetch information of registerd users and finds user match.
 
-$result = mysqli_query($connection, "select * from login where password='$password' AND username='$username'");
+$result = mysqli_query($connection, "select * from login_client where password='$password' AND username='$username'");
 
 $rows = mysqli_num_rows($result);
 
