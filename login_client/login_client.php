@@ -1,9 +1,10 @@
 <?php
-session_start(); 
-$error=''; // error variable
-	if (isset($_POST['submit'])) {
+session_start();
 
-		if (empty($_POST['username']) || empty($_POST['password'])) {  //checking whether its an empty request.
+$error=''; // error variable
+
+if (isset($_POST['submit'])) { // checking whether post variables are set
+		if (empty($_POST['username']) || empty($_POST['password'])) {    //checking whether we got empty credentials or not
 		$error = "Username or Password is invalid or empty";
 		}
 
@@ -13,22 +14,14 @@ $error=''; // error variable
 	$password=$_POST['password'];
 
 $connection = mysqli_connect("localhost", "root", "", "instaconsult");
-// To protect MySQL injection for Security purpose
-// $username = stripslashes($username);
-// $password = stripslashes($password);
-// $username = mysql_real_escape_string($username);
-// $password = mysql_real_escape_string($password);
-
-// SQL query to fetch information of registerd users and finds user match.
-
 $result = mysqli_query($connection, "select * from login_client where password='$password' AND username='$username'");
 
 $rows = mysqli_num_rows($result);
 
 if ($rows == 1) {
-$_SESSION['login_user']=$username; // Initializing Session(setting the session variable)
+$_SESSION['login_client']=$username; // Initializing Session(setting the session variable)
 header("location: profile.php"); // Redirecting To Other Page
-} 
+				}
 
 else {
 $error = "Username or Password is invalid";
