@@ -2,22 +2,19 @@
 require 'Slim/Slim.php';
 require 'RedBean/rb.php';
 \Slim\Slim::registerAutoloader();
-session_cache_limiter(false);
-// add redbeans here later
-session_start();
+// session_cache_limiter(false);
+// session_start();
 $app = new \Slim\Slim();                    // pass an associative array to this if you want to configure the settings
 
+$app->post('/login', function () use ($app) {
 
-$app->post("/login", function () use ($app) {
+
+  $username = $app->request->post('username');
+  $password = $app->request->post('password');
 
 
-  $request = $app->request();
-  $body = $request->getBody();
-  $input = json_decode($body, true);
-
-  $username=$input['username']
-  $password=$input['password'];
-
+      echo json_encode($username);
+      echo json_encode($password);
 
       $connection = mysqli_connect("localhost", "root", "", "instaconsult");
       $result = mysqli_query($connection, "select * from login_client where password='$password' AND username='$username'");
@@ -26,11 +23,11 @@ $app->post("/login", function () use ($app) {
 
       if ($rows == 1) {
         $_SESSION['login_client']=$username; // Initializing Session(setting the session variable)
-        header("location: profile.php"); // Redirecting To Other Page
+        echo json_encode("logged in"); // Redirecting To Other Page
       }
 
       else {
-        $error = "Username or Password is invalid";
+        echo json_encode("Username or Password is invalid");
       }
       mysqli_close($connection); // Closing Connection
 
@@ -38,11 +35,7 @@ $app->post("/login", function () use ($app) {
 
   $app->response()->header('Content-Type', 'application/json');
 
-
-  // return JSON-encoded response body with query results
-
-
-
 });
+
 $app->run();
 ?>
