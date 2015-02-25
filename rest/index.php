@@ -1,11 +1,4 @@
 <?php
-require '/Slim/Slim.php';
-\Slim\Slim::registerAutoloader();
-$app = new \Slim\Slim();
-session_cache_limiter(false);
-
-$app->add(new \Slim\Middleware\SessionCookie(array('secret' => 'myappsecret')));// session data is in encrypted hashed http cookies
-
 
 $authenticate = function ($app) {
       return function () use ($app) {
@@ -53,23 +46,12 @@ $app->get("/login", function () use ($app) {
 
   $email_value = $email_error = $password_error = '';
 
-  if (isset($flash['email'])) {
-    $email_value = $flash['email'];
-  }
-
-  if (isset($flash['errors']['email'])) {
-    $email_error = $flash['errors']['email'];
-  }
-
-  if (isset($flash['errors']['password'])) {
-    $password_error = $flash['errors']['password'];
-  }
 
   $app->render('login.php', array('error' => $error, 'email_value' => $email_value, 'email_error' => $email_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect));
 });
 
 $app->post("/login", function () use ($app) {
-  $email = $app->request()->post('email');
+  $username = $app->request()->post('username');
   $password = $app->request()->post('password');
 
   $errors = array();
