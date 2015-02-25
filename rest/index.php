@@ -1,18 +1,18 @@
 <?php
 require '/Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
-
-
 $app = new \Slim\Slim();
+session_cache_limiter(false);
 
-$app->add(new \Slim\Middleware\SessionCookie(array('secret' => 'myappsecret')));
+$app->add(new \Slim\Middleware\SessionCookie(array('secret' => 'myappsecret')));// session data is in encrypted hashed http cookies
+
 
 $authenticate = function ($app) {
-  return function () use ($app) {
-    if (!isset($_SESSION['user'])) {
-      $_SESSION['urlRedirect'] = $app->request()->getPathInfo();
-      $app->flash('error', 'Login required');
-      $app->redirect('/login');
+      return function () use ($app) {
+          if (!isset($_SESSION['user'])) {
+            $_SESSION['urlRedirect'] = $app->request()->getPathInfo();
+            $app->flash('error', 'Login required');
+            $app->redirect('/login');
     }
   };
 };
@@ -25,17 +25,7 @@ $app->hook('slim.before.dispatch', function() use ($app) {
   $app->view()->setData('user', $user);
 });
 
-$app->get("/", function () use ($app) {
-  $app->render('index.php');
-});
 
-$app->get("/about", function () use ($app) {
-  $app->render('about.php');
-});
-
-$app->get("/level/contact", function () use ($app) {
-  $app->render('levelContact.php');
-});
 
 $app->get("/logout", function () use ($app) {
   unset($_SESSION['user']);
@@ -111,9 +101,7 @@ $app->get("/private/about", $authenticate($app), function () use ($app) {
   $app->render('privateAbout.php');
 });
 
-$app->get("/private/goodstuff", $authenticate($app), function () use ($app) {
-  $app->render('privateGoodStuff.php');
-});
 
 
 $app->run();
+?>
