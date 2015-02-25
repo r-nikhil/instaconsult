@@ -1,5 +1,6 @@
 <?php
 require 'Slim/Slim.php';
+require 'RedBean/rb.php';
 \Slim\Slim::registerAutoloader();
 session_cache_limiter(false);
 // add redbeans here later
@@ -12,10 +13,10 @@ $app->post("/login", function () use ($app) {
 
   $request = $app->request();
   $body = $request->getBody();
-  $input = json_decode($body);
+  $input = json_decode($body, true);
 
-  $username=$input->username;
-  $password=$input->password;
+  $username=$input['username']
+  $password=$input['password'];
 
 
       $connection = mysqli_connect("localhost", "root", "", "instaconsult");
