@@ -14,13 +14,6 @@ $login_session_user  = $row['username']; // this extra time reassigning and sear
 
 $data=mysqli_query($connection, "select * from client_data where username= '$login_client'");
 
-$fields = mysqli_fetch_assoc($data);
-
-$user_email= $fields['email'];
-$user_country=$fields['country'];
-$open_project_id=$fields['open_project_id'];
-$finished_project_id=$fields['finished_project_id'];
-$accepted_project_id=$fields['accepted_project_id'];
 
 
 if(!isset($login_session_user))
