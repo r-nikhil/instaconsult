@@ -24,7 +24,6 @@ $rows = mysqli_num_rows($result);
 
 if ($rows == 1) {
   $_SESSION['login_client']=$username; // Initializing Session(setting the session variable)
-  header("location: profile.php"); // Redirecting To Other Page
 }
 
 else {
