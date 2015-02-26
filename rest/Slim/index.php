@@ -16,7 +16,6 @@ $result=  json_decode($body);
 $username=$result->username;
 $password=$result->password;
 
-
 $connection = mysqli_connect("localhost", "root", "", "instaconsult");
 $result = mysqli_query($connection, "select * from login_client where password='$password' AND username='$username'");
 
@@ -34,6 +33,24 @@ mysqli_close($connection);
 
   $app->response()->header('Content-Type', 'application/json');
 });
+
+
+
+$app->get('/profile', function () use ($app) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 $app->run();
 ?>
