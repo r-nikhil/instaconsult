@@ -6,6 +6,14 @@ session_cache_limiter(false);
 session_start();
 // R::setup('mysql:host=localhost;dbname=instaconsult','root','');
 // R::freeze(true);
+$authenticate = function ($app) {
+  return function () use ( $role ) {
+    if(!isset($_SESSION['login_client'])){
+      $app->redirect('/login');
+
+    }
+  };
+};
 
 $app = new \Slim\Slim();                    // pass an associative array to this if you want to configure the settings
 
@@ -22,7 +30,8 @@ $result = mysqli_query($connection, "select * from login_client where password='
 $rows = mysqli_num_rows($result);
 
 if ($rows == 1) {
-  $_SESSION['login_client']=$username; // Initializing Session(setting the session variable)
+  $_SESSION['login_client']=$username;
+  $app->redirect('profile'); // Initializing Session(setting the session variable)
 }
 
 else {
@@ -36,21 +45,14 @@ mysqli_close($connection);
 
 
 
-$app->get('/profile', function () use ($app) {
+$app->get('/profile',  function () use ($app) {
+  echo json_encode("yolo");
 
 
+  $app->response()->header('Content-Type', 'application/json');
 
 
-
-
-
-
-
-
-
-
-
-
+});
 
 $app->run();
 ?>
