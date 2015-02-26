@@ -6,16 +6,6 @@ session_cache_limiter(false);
 session_start();
 
 
-// R::setup('mysql:host=localhost;dbname=instaconsult','root','');
-// R::freeze(true);
-// $authenticate = function ($app) {
-//   return function () use ($app) {
-//     if (!isset($_SESSION['user'])) {
-//       $app->redirect('login');
-//     }
-//   };
-// }
-
 $app = new \Slim\Slim();                    // pass an associative array to this if you want to configure the settings
 
 $app->post('/login', function () use ($app) {
