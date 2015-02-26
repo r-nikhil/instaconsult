@@ -4,16 +4,17 @@ require 'Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 session_cache_limiter(false);
 session_start();
+
+
 // R::setup('mysql:host=localhost;dbname=instaconsult','root','');
 // R::freeze(true);
-$authenticate = function ($app) {
-  return function () use ( $role ) {
-    if(!isset($_SESSION['login_client'])){
-      $app->redirect('/login');
-
-    }
-  };
-};
+// $authenticate = function ($app) {
+//   return function () use ($app) {
+//     if (!isset($_SESSION['user'])) {
+//       $app->redirect('login');
+//     }
+//   };
+// }
 
 $app = new \Slim\Slim();                    // pass an associative array to this if you want to configure the settings
 
@@ -35,7 +36,7 @@ if ($rows == 1) {
 }
 
 else {
-  $error = "Username or Password is invalid";
+  echo json_encode("Username or Password is invalid");
 }
 mysqli_close($connection);
 
@@ -45,7 +46,7 @@ mysqli_close($connection);
 
 
 
-$app->get('/profile',  function () use ($app) {
+$app->get('/profile',function () use ($app) {
   echo json_encode("yolo");
 
 
@@ -53,6 +54,8 @@ $app->get('/profile',  function () use ($app) {
 
 
 });
+
+
 
 $app->run();
 ?>
