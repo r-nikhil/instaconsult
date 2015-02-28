@@ -1,18 +1,18 @@
 # instaconsult
-On Demand Business/Finance Consultancy
-Work in Progress
+On Demand Business/Finance Consultancy<br>
+Work in Progress<br>
 
 
 Hemant :: {Check the dump file to get an idea of the schema. All the logic and everything resides in Slim/index.php
- So the first login request will be like http://www.example.com/Slim/index.php/login.
+ So the first login request will be like http://www.example.com/Slim/index.php/login.<br>
 
- Maybe open a new branch and start committing code to that branch(front end code)
+ Maybe open a new branch and start committing code to that branch(front end code)<br>
 
- Use a chrome plugin to send rest api requests
+ Use a chrome plugin to send rest api requests<br>
 
- Also some browsers dont support put and delete requests apparently. http://docs.slimframework.com/#Routing
+ Also some browsers dont support put and delete requests apparently. http://docs.slimframework.com/#Routing<br>
 
- Please refer that on how to make those requests
+ Please refer that on how to make those requests<br>
 
 
 
@@ -38,7 +38,7 @@ The code quality now is very poor since being a novice I am experimenting with v
 
 
 TODO:
-Every 5 api I write, I will refactor and organise a little so that it doesnt get out of hand
-Make a middleware function or include some file for auth at every endpoint
-Add try and catch at every endpoint for error management(Also generate specific error also at some point{ask hemant})
-Read on slim webhooks and try to use this(later stage)
+Every 5 api I write, I will refactor and organise a little so that it doesnt get out of hand<br>
+Make a middleware function or include some file for auth at every endpoint<br>
+Add try and catch at every endpoint for error management(Also generate specific error also at some point{ask hemant})<br>
+Read on slim webhooks and try to use this(later stage)<br>
