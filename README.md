@@ -3,7 +3,9 @@ On Demand Business/Finance Consultancy
 Work in Progress
 
 Hemant :: Check the dump file to get an idea of the schema. All the logic and everything resides in Slim/index.php
- So the first login request will be like http://www.example.com/Slim/index.php/login
+ So the first login request will be like http://www.example.com/Slim/index.php/login.
+
+ Maybe open a new branch and start committing code to that branch(front end code)
 
  Use a chrome plugin to send rest api requests
 
