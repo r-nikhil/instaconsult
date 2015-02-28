@@ -12,7 +12,7 @@ $row = mysqli_fetch_assoc($result);
 
 $login_session_user  = $row['username']; // this extra time reassigning and search happens for safety
 
-$data=mysqli_query($connection, "select * from client_data where username= '$login_client'");
+// $data=mysqli_query($connection, "select * from client_data where username= '$login_client'");
 
 
 

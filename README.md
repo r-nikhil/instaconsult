@@ -13,5 +13,3 @@ Finished API Endpoints.
 
 
 @netham91 Check whether these methodologies are alright. If not I will change the way I code.
-
-I will implement redbeans shortly before sleeping and some 4-5 other api also 

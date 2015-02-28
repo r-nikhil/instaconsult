@@ -40,7 +40,9 @@ $app->get('/profile',function () use ($app,$connection) {
 
 
   $result = mysqli_query($connection, "select * from client_data where username='$login_session_user'");
-echo json_encode(mysqli_fetch_array($result));
+$data=mysqli_fetch_array($result);
+
+echo json_encode($data);
 
 
 
