@@ -41,3 +41,4 @@ TODO:
 Every 5 api I write, I will refactor and organise a little so that it doesnt get out of hand
 Make a middleware function or include some file for auth at every endpoint
 Add try and catch at every endpoint for error management(Also generate specific error also at some point{ask hemant})
+Read on slim webhooks and try to use this(later stage)
