@@ -81,7 +81,102 @@ echo json_encode($data);
 });
 
 
+$app->get('/closed_project',function () use ($app,$connection) {
 
+  include('session.php');
+  $data=mysqli_query($connection, "select client_id from login_client where username= '$login_client'");
+  // $id=mysqli_fetch_row($data);
+  while($ide = mysqli_fetch_assoc($data)) {
+    $qwe=$ide["client_id"];
+  }
+
+  $fields=mysqli_query($connection, "select * from closed_project where client_id= '$qwe'");
+
+  $rows = array();
+  while($r = mysqli_fetch_assoc($fields)) {
+    $rows[] = $r;
+  }
+  echo json_encode($rows);
+
+
+});
+
+$app->get('/closed_project/:id', function ($ids) use ($app,$connection) {
+  include('session.php');
+
+  $fields=mysqli_query($connection, "select * from closed_project where project_id= '$ids'");
+
+
+  $data=mysqli_fetch_array($fields);
+
+  echo json_encode($data);
+
+
+});
+$app->get('/accepted_project',function () use ($app,$connection) {
+
+  include('session.php');
+  $data=mysqli_query($connection, "select client_id from login_client where username= '$login_client'");
+  // $id=mysqli_fetch_row($data);
+  while($ide = mysqli_fetch_assoc($data)) {
+    $qwe=$ide["client_id"];
+  }
+
+  $fields=mysqli_query($connection, "select * from accepted_project where client_id= '$qwe'");
+
+  $rows = array();
+  while($r = mysqli_fetch_assoc($fields)) {
+    $rows[] = $r;
+  }
+  echo json_encode($rows);
+
+
+});
+
+$app->get('/accepted_project/:id', function ($ids) use ($app,$connection) {
+  include('session.php');
+
+  $fields=mysqli_query($connection, "select * from accepted_project where project_id= '$ids'");
+
+
+  $data=mysqli_fetch_array($fields);
+
+  echo json_encode($data);
+
+
+});
+$app->get('/deadline_project',function () use ($app,$connection) {
+
+  include('session.php');
+  $data=mysqli_query($connection, "select client_id from login_client where username= '$login_client'");
+  // $id=mysqli_fetch_row($data);
+  while($ide = mysqli_fetch_assoc($data)) {
+    $qwe=$ide["client_id"];
+  }
+
+  $fields=mysqli_query($connection, "select * from deadline_project where client_id= '$qwe'");
+
+  $rows = array();
+  while($r = mysqli_fetch_assoc($fields)) {
+    $rows[] = $r;
+  }
+  echo json_encode($rows);
+
+
+});
+
+$app->get('/deadline_project/:id', function ($ids) use ($app,$connection) {
+  include('session.php');
+
+  $fields=mysqli_query($connection, "select * from deadline_project where project_id= '$ids'");
+
+
+  $data=mysqli_fetch_array($fields);
+
+  echo json_encode($data);
+
+
+});
 
 
 
