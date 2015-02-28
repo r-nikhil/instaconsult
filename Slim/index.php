@@ -178,6 +178,23 @@ $app->get('/deadline_project/:id', function ($ids) use ($app,$connection) {
 
 });
 
+$app->put('/create_profile_client', function () use ($app,$connection) {
+  $request = $app->request();
+  $body = $request->getBody();
+  $input = json_decode($body);
+  $usernameee=$input->username;
+  $firstname=$input->firstname;
+  $lastname=$input->lastname;
+  $email=$input->email;
+  $country=$input->country;
+
+
+$query=mysqli_query($connection, "INSERT INTO client_data (username, first_name, last_name, email, Country)
+VALUES ('$usernameee','$firstname','$lastname','email','$country')" );
+
+
+
+
 
 
 $app->run();
