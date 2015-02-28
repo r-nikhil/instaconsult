@@ -50,14 +50,40 @@ echo json_encode($data);
 $app->get('/open_project',function () use ($app,$connection) {
 
 include('session.php');
-// $result = mysqli_query($connection, "select * from open_project where project_id='$open_project_id'");
+$data=mysqli_query($connection, "select client_id from login_client where username= '$login_client'");
+// $id=mysqli_fetch_row($data);
+while($ide = mysqli_fetch_assoc($data)) {
+  $qwe=$ide["client_id"];
+}
 
-// $result = mysqli_query($connection, "select * from open_project where project_id='$open_project_id'");
-// $data=mysqli_fetch_array($result);
+$fields=mysqli_query($connection, "select * from open_project where client_id= '$qwe'");
+
+$rows = array();
+while($r = mysqli_fetch_assoc($fields)) {
+  $rows[] = $r;
+}
 echo json_encode($rows);
 
 
 });
+
+$app->get('/open_project/:id', function ($ids) use ($app,$connection) {
+include('session.php');
+
+$fields=mysqli_query($connection, "select * from open_project where project_id= '$ids'");
+
+
+$data=mysqli_fetch_array($fields);
+
+echo json_encode($data);
+
+
+});
+
+
+
+
+
 
 $app->run();
 ?>
