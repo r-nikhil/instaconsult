@@ -44,13 +44,20 @@ $data=mysqli_fetch_array($result);
 
 echo json_encode($data);
 
-
-
-
   $app->response()->header('Content-Type', 'application/json');
 });
 
+$app->get('/open_project',function () use ($app,$connection) {
 
+include('session.php');
+// $result = mysqli_query($connection, "select * from open_project where project_id='$open_project_id'");
+
+// $result = mysqli_query($connection, "select * from open_project where project_id='$open_project_id'");
+// $data=mysqli_fetch_array($result);
+echo json_encode($rows);
+
+
+});
 
 $app->run();
 ?>

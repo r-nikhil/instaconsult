@@ -10,4 +10,4 @@ Work in Progress
 Finished API Endpoints.
 1)/login. Send username and password.   (Uses PHP Sessions) POST request
 2)/profile. Simply send a get request.. I will display the data for the correct user who has logged in. If not logged in he will be redirected to /login. You have to change frontend also accordingly.
-3)
+3)/open_project. GET Give project details of all the open projects available.
