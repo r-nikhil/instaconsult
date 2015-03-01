@@ -34,7 +34,7 @@ mysqli_close($connection);
 });
 
 $app->get('/profile_client',function () use ($app,$connection) {
-  //include('session.php');
+  include('db.php');
   $body = $app->request->getBody();
   $result=  json_decode($body);
 
