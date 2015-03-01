@@ -1,6 +1,6 @@
 # instaconsult
 On Demand Business/Finance Consultancy<br>
-Work in Progress<br>
+<h1>Work in Progress</h1><br>
 
 
 Hemant :: {Check the dump file to get an idea of the schema. All the logic and everything resides in Slim/index.php
