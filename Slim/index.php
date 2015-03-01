@@ -191,11 +191,6 @@ $app->put('/create_profile_client', function () use ($app,$connection) {
 
 $query=mysqli_query($connection, "INSERT INTO client_data (username, first_name, last_name, email, Country)
 VALUES ('$usernameee','$firstname','$lastname','email','$country')" );
-
-
-
-
-
-
+});
 $app->run();
 ?>
