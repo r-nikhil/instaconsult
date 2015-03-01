@@ -5,7 +5,7 @@ require 'Slim/Slim.php';
 session_cache_limiter(false);
 session_start();
 $connection = mysqli_connect("localhost", "root", "", "instaconsult");
-
+include 'db.php';
 $app = new \Slim\Slim();                    // pass an associative array to this if you want to configure the settings
 
 $app->post('/login', function () use ($app,$connection) {
@@ -33,7 +33,7 @@ mysqli_close($connection);
   $app->response()->header('Content-Type', 'application/json');
 });
 
-$app->get('/profile',function () use ($app,$connection) {
+$app->get('/profile_client',function () use ($app,$connection) {
   include('session.php');
   $body = $app->request->getBody();
   $result=  json_decode($body);
