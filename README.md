@@ -32,6 +32,7 @@ Finished API Endpoints.<br>
 9)/deadline_project. GET Give project details of all the open projects available.<br>
 10)/deadline_project/id. GET Give project id there, I will retrieve project details.<br>
 11)/create_profile_client. PUT. See schema/code for all the details you have to give in json.<br>
+12)/create_profile_expert. PUT. See schema/code for all the details you have to give in json.<br>
 
 
 The code quality now is very poor since being a novice I am experimenting with various methods. I dont want to waste time on write beautiful/easy to read code as of now.Once atleast a few modules are neatly working, I will organise stuff into libs, use redbeans, make functions. Please bear with this for sometime. Any doubt in the code, please PM me.

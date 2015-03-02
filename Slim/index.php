@@ -21,7 +21,7 @@ $rows = mysqli_num_rows($result);
 
 if ($rows == 1) {
   $_SESSION['login_client']=$username; // after the user logs the session variable is assigned.
-  $app->redirect('profile');
+  $app->redirect('profile_client');
 }
 
 else {
@@ -67,7 +67,7 @@ echo json_encode($rows);
 
 });
 
-$app->get('/open_project/:id', function ($ids) use ($app,$connection) {
+$app->get('/open_project/:ids', function ($ids) use ($app,$connection) {
 include('session.php');
 
 $fields=mysqli_query($connection, "select * from open_project where project_id= '$ids'");
@@ -101,7 +101,7 @@ $app->get('/closed_project',function () use ($app,$connection) {
 
 });
 
-$app->get('/closed_project/:id', function ($ids) use ($app,$connection) {
+$app->get('/closed_project/:ids', function ($ids) use ($app,$connection) {
   include('session.php');
 
   $fields=mysqli_query($connection, "select * from closed_project where project_id= '$ids'");
@@ -133,7 +133,7 @@ $app->get('/accepted_project',function () use ($app,$connection) {
 
 });
 
-$app->get('/accepted_project/:id', function ($ids) use ($app,$connection) {
+$app->get('/accepted_project/:ids', function ($ids) use ($app,$connection) {
   include('session.php');
 
   $fields=mysqli_query($connection, "select * from accepted_project where project_id= '$ids'");
@@ -165,7 +165,7 @@ $app->get('/deadline_project',function () use ($app,$connection) {
 
 });
 
-$app->get('/deadline_project/:id', function ($ids) use ($app,$connection) {
+$app->get('/deadline_project/:ids', function ($ids) use ($app,$connection) {
   include('session.php');
 
   $fields=mysqli_query($connection, "select * from deadline_project where project_id= '$ids'");
@@ -198,7 +198,16 @@ $app->put('/create_profile_expert', function () use ($app,$connection) {
   $request = $app->request();
   $body = $request->getBody();
   $input = json_decode($body);
-  
+  $usernameee=$input->username;
+  $firstname=$input->firstname;
+  $lastname=$input->lastname;
+  $email=$input->email;
+  $country=$input->country;
+  $categories=$input->categories;
+
+  $query=mysqli_query($connection, "INSERT INTO expert_data (username, first_name, last_name, email, Country)
+  VALUES ('$usernameee','$firstname','$lastname','email','$country')" );
+
 
 
 
