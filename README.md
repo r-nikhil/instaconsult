@@ -2,6 +2,9 @@
 On Demand Business/Finance Consultancy<br>
 <h1>Work in Progress</h1><br>
 
+To Anurag and Chetan: Send Rest Requests to "172.17.19.41/instaconsult/Slim/index.php/{param}". It will be available most of the time.
+
+
 
 Hemant :: {Check the dump file to get an idea of the schema. All the logic and everything resides in Slim/index.php
  So the first login request will be like http://www.example.com/Slim/index.php/login.<br>
