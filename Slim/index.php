@@ -211,11 +211,23 @@ $app->put('/create_profile_expert', function () use ($app,$connection) {
   $query=mysqli_query($connection, "INSERT INTO expert_data (username, first_name, last_name, email, Country)
   VALUES ('$usernameee','$firstname','$lastname','email','$country')" );
   if($query){echo json_encode("the expert has successfully created a new profile");}
-
-
-
-
 });
+$app->get('/profile_client:idq',function ($idq) use ($app,$connection) {
+  include('db.php');
+  $body = $app->request->getBody();
+  $result=  json_decode($body);
+
+
+  $result = mysqli_query($connection, "select * from client_data where client_id='$idq'");
+  $data=mysqli_fetch_array($result);
+  
+  echo json_encode($data);
+
+  $app->response()->header('Content-Type', 'application/json');
+});
+
+
+
 
 
 

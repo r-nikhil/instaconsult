@@ -27,15 +27,17 @@ Finished API Endpoints.<br>
 1)/login. Send username and password.   (Uses PHP Sessions) POST request<br>
 2)/profile_client. Simply send a get request.. I will display the data for the correct user who has logged in. If not logged in he will be redirected to /login. You have to change frontend also accordingly.<br>
 3)/open_project. GET Give project details of all the open projects available.<br>
-4)/open_project/id. GET Give project id there, I will retrieve project details.<br>
+4)/open_project/ids. GET Give project id there, I will retrieve project details.<br>
 5)/closed_project. GET Give project details of all the open projects available.<br>
-6)/closed_project/id. GET Give project id there, I will retrieve project details.<br>
+6)/closed_project/ids. GET Give project id there, I will retrieve project details.<br>
 7)/accepted_project. GET Give project details of all the open projects available.<br>
-8)/accepted_project/id. GET Give project id there, I will retrieve project details.<br>
+8)/accepted_project/ids. GET Give project id there, I will retrieve project details.<br>
 9)/deadline_project. GET Give project details of all the open projects available.<br>
-10)/deadline_project/id. GET Give project id there, I will retrieve project details.<br>
+10)/deadline_project/ids. GET Give project id there, I will retrieve project details.<br>
 11)/create_profile_client. PUT. See schema/code for all the details you have to give in json.<br>
 12)/create_profile_expert. PUT. See schema/code for all the details you have to give in json.<br>
+13)/profile_client:idq. GET. See schema/code for all the details you have to give in json. This is for one client accessing other client's profile.<br>
+14)
 
 
 The code quality now is very poor since being a novice I am experimenting with various methods. I dont want to waste time on write beautiful/easy to read code as of now.Once atleast a few modules are neatly working, I will organise stuff into libs, use redbeans, make functions. Please bear with this for sometime. Any doubt in the code, please PM me.
