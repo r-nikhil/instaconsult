@@ -43,6 +43,10 @@ Finished API Endpoints.<br>
 15)/login_expert. Send username and password.   (Uses PHP Sessions) POST request<br>
 16)/profile_expert. Simply send a get request.. I will display the data for the correct user who has logged in. If not logged in he will be redirected to /login. You have to change frontend also accordingly.<br>
 
+<h1>BIDS</h1>
+
+17)
+
 
 
 
