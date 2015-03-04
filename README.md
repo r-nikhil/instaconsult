@@ -1,4 +1,5 @@
 # instaconsult
+
 On Demand Business/Finance Consultancy<br>
 <h1>Work in Progress</h1><br>
 
@@ -16,12 +17,7 @@ Hemant :: {Check the dump file to get an idea of the schema. All the logic and e
  Also some browsers dont support put and delete requests apparently. http://docs.slimframework.com/#Routing<br>
 
  Please refer that on how to make those requests<br>
-
-
-
  }
-
-
 
 Finished API Endpoints.<br>
 1)/login. Send username and password.   (Uses PHP Sessions) POST request<br>
