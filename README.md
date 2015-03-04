@@ -35,6 +35,7 @@ Finished API Endpoints.<br>
 13)/profile_client:idq. GET. See schema/code for all the details you have to give in json. This is for one client accessing other client's profile.<br>
 14)/profile_expert:idq. GET. See schema/code for all the details you have to give in json. This is for one client accessing other expert's profile.<br
 15)/login_expert. Send username and password.   (Uses PHP Sessions) POST request<br>
+16)/profile_expert. Simply send a get request.. I will display the data for the correct user who has logged in. If not logged in he will be redirected to /login. You have to change frontend also accordingly.<br>
 
 The code quality now is very poor since being a novice I am experimenting with various methods. I dont want to waste time on write beautiful/easy to read code as of now.Once atleast a few modules are neatly working, I will organise stuff into libs, use redbeans, make functions. Please bear with this for sometime. Any doubt in the code, please PM me.
 
