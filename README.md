@@ -47,6 +47,8 @@ Finished API Endpoints.<br>
 
 
 
+
+
 The code quality now is very poor since being a novice I am experimenting with various methods. I dont want to waste time on write beautiful/easy to read code as of now.Once atleast a few modules are neatly working, I will organise stuff into libs, use redbeans, make functions. Please bear with this for sometime. Any doubt in the code, please PM me.
 
 
