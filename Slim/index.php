@@ -238,7 +238,30 @@ $app->get('/profile_expert:idq',function ($idq) use ($app,$connection) {
 
   $app->response()->header('Content-Type', 'application/json');
 });
+$app->post('/login_expert', function () use ($app,$connection) {
 
+  $body = $app->request->getBody();
+  $result=  json_decode($body);
+  $username=$result->username;
+  $password=$result->password;
+
+  $result = mysqli_query($connection, "select * from login_expert where password='$password' AND username='$username'");
+
+  $rows = mysqli_num_rows($result);
+
+  if ($rows == 1) {
+    $_SESSION['login_client']=$username; // after the user logs the session variable is assigned.
+    $app->redirect('profile_expert');
+  }
+
+  else {
+    echo json_encode("Username or Password is invalid");
+  }
+  mysqli_close($connection);
+
+
+  $app->response()->header('Content-Type', 'application/json');
+});
 
 
 
