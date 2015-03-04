@@ -238,8 +238,6 @@ $app->get('/profile_expert:idq',function ($idq) use ($app,$connection) {
 
   $app->response()->header('Content-Type', 'application/json');
 
-
-
 });
 
 
