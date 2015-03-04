@@ -20,7 +20,7 @@ Hemant :: {Check the dump file to get an idea of the schema. All the logic and e
  }
 
 Finished API Endpoints.<br>
-1)/login. Send username and password.   (Uses PHP Sessions) POST request<br>
+1)/login_client. Send username and password.   (Uses PHP Sessions) POST request<br>
 2)/profile_client. Simply send a get request.. I will display the data for the correct user who has logged in. If not logged in he will be redirected to /login. You have to change frontend also accordingly.<br>
 3)/open_project. GET Give project details of all the open projects available.<br>
 4)/open_project/ids. GET Give project id there, I will retrieve project details.<br>
