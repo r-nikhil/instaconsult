@@ -262,7 +262,19 @@ $app->post('/login_expert', function () use ($app,$connection) {
 
   $app->response()->header('Content-Type', 'application/json');
 });
+$app->get('/profile_expert',function () use ($app,$connection) {
+  include('db.php');
+  $body = $app->request->getBody();
+  $result=  json_decode($body);
 
+
+  $result = mysqli_query($connection, "select * from expert_data where username='$login_session_user'");
+  $data=mysqli_fetch_array($result);
+
+  echo json_encode($data);
+
+  $app->response()->header('Content-Type', 'application/json');
+});
 
 
 
