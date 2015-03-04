@@ -8,7 +8,7 @@ $connection = mysqli_connect("localhost", "root", "", "instaconsult");
 include 'db.php';
 $app = new \Slim\Slim();                    // pass an associative array to this if you want to configure the settings
 
-$app->post('/login', function () use ($app,$connection) {
+$app->post('/login_client', function () use ($app,$connection) {
 
 $body = $app->request->getBody();
 $result=  json_decode($body);
@@ -237,8 +237,10 @@ $app->get('/profile_expert:idq',function ($idq) use ($app,$connection) {
   echo json_encode($data);
 
   $app->response()->header('Content-Type', 'application/json');
-
 });
+
+
+
 
 
 
