@@ -45,7 +45,7 @@ Finished API Endpoints.<br>
 
 <h1>BIDS</h1>
 
-17)
+17)/add_bid. POST request. Check the code for values you have to send
 
 
 

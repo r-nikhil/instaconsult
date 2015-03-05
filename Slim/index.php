@@ -289,7 +289,7 @@ $app->put('/add_bid', function () use ($app,$connection) {
 
   $query=mysqli_query($connection, "INSERT INTO bids (project_id, client_id, expert_id,amount,proposal)
   VALUES ('$project_id','$client_id','$expert_id','$amount','$proposal')" );
-  if($query){echo json_encode("the expert has successfully created a new profile");}
+  if($query){echo json_encode("Bid has been placed");}
 });
 
 
