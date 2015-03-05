@@ -306,7 +306,18 @@ echo json_encode($data);
 $app->response()->header('Content-Type', 'application/json');
 
 });
-
+$app->post('/add_comment', function () use ($app,$connection) {
+  $request = $app->request();
+  $body = $request->getBody();
+  $input = json_decode($body);
+  $expert_id=$input->expert_id;
+  $project_id=$input->project_id;
+  $bid_id=$input->bid_id;
+  $comment=$input->comment;
+  $query=mysqli_query($connection, "INSERT INTO comment (project_id, client_id, expert_id,bid_id,comment)
+  VALUES ('$project_id','$client_id','$expert_id','$bid_id','$comment')" );
+  if($query){echo json_encode("Bid has been placed");}
+});
 
 
 
