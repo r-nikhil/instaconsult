@@ -319,7 +319,7 @@ $app->post('/add_comment', function () use ($app,$connection) {
   if($query){echo json_encode("Comment has been added");}
 // we will implement threads later when things grow.
 });
-$app->post('/delete_comment', function () use ($app,$connection) {
+$app->delete('/delete_comment', function () use ($app,$connection) {
   $request = $app->request();
   $body = $request->getBody();
   $input = json_decode($body);
