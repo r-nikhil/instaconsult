@@ -58,9 +58,9 @@ Finished API Endpoints.<br>
 
 
 The code quality now is very poor since being a novice I am experimenting with various methods. I dont want to waste time on write beautiful/easy to read code as of now.Once atleast a few modules are neatly working, I will organise stuff into libs, use redbeans, make functions. Please bear with this for sometime. Any doubt in the code, please PM me.
+<br><br>
 
-
-TODO:
+<h2>TODO: </h2>
 Every 5 api I write, I will refactor and organise a little so that it doesnt get out of hand<br>
 Make a middleware function or include some file for auth at every endpoint<br>
 Add try and catch at every endpoint for error management(Also generate specific error also at some point{ask hemant})<br>
