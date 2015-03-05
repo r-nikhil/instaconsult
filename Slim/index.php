@@ -305,12 +305,9 @@ echo json_encode($data);
 
 $app->response()->header('Content-Type', 'application/json');
 
-
-
-
-
-
 });
+
+
 
 
 
