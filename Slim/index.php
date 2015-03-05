@@ -317,6 +317,10 @@ $app->post('/add_comment', function () use ($app,$connection) {
   $query=mysqli_query($connection, "INSERT INTO comment (project_id, client_id, expert_id,bid_id,comment)
   VALUES ('$project_id','$client_id','$expert_id','$bid_id','$comment')" );
   if($query){echo json_encode("Bid has been placed");}
+// we will implement threads later when things grow.
+
+
+
 });
 
 
