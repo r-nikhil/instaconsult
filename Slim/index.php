@@ -316,12 +316,20 @@ $app->post('/add_comment', function () use ($app,$connection) {
   $comment=$input->comment;
   $query=mysqli_query($connection, "INSERT INTO comment (project_id, client_id, expert_id,bid_id,comment)
   VALUES ('$project_id','$client_id','$expert_id','$bid_id','$comment')" );
-  if($query){echo json_encode("Bid has been placed");}
+  if($query){echo json_encode("Comment has been added");}
 // we will implement threads later when things grow.
-
-
-
 });
+$app->post('/delete_comment', function () use ($app,$connection) {
+  $request = $app->request();
+  $body = $request->getBody();
+  $input = json_decode($body);
+  $comment_id=$input->comment_id;
+
+  $query=mysqli_query($connection, "DELETE FROM  comment where comment_id='$comment_id'" );
+  if($query){echo json_encode("Comment Deleted");}
+  // we will implement threads later when things grow.
+});
+
 
 
 
