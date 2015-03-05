@@ -45,11 +45,11 @@ Finished API Endpoints.<br>
 
 <h1>BIDS</h1>
 
-17)/add_bid. POST request. Check the code for values you have to send.
-18)/view_bid:id. Get request. Here the id is project id. The frontend has to keep track of which project the user is searching for.
+17)/add_bid. POST request. Check the code for values you have to send.<br>
+18)/view_bid:id. Get request. Here the id is project id. The frontend has to keep track of which project the user is searching for.<br>
 <h1>Comments</h1>
-19)/add_comment. POST request. Check the code for details
-20)/delete_comment. PUT request. Check the code.
+19)/add_comment. POST request. Check the code for details<br>
+20)/delete_comment. PUT request. Check the code.<br>
 
 
 
