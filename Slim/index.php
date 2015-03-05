@@ -209,7 +209,7 @@ $app->put('/create_profile_expert', function () use ($app,$connection) {
   $categories=$input->categories;
 
   $query=mysqli_query($connection, "INSERT INTO expert_data (username, first_name, last_name, email, Country)
-  VALUES ('$usernameee','$firstname','$lastname','email','$country')" );
+  VALUES ('$usernameee','$firstname','$lastname','$email','$country')" );
   if($query){echo json_encode("the expert has successfully created a new profile");}
 });
 $app->get('/profile_client:idq',function ($idq) use ($app,$connection) {
@@ -277,7 +277,23 @@ $app->get('/profile_expert',function () use ($app,$connection) {
 });
 
 
- b    
+$app->put('/add_bid', function () use ($app,$connection) {
+  $request = $app->request();
+  $body = $request->getBody();
+  $input = json_decode($body);
+  $client_id=$input->client_id;
+  $expert_id=$input->expert_id;
+  $amount=$input->amount;
+  $project_id=$input->project_id;
+  $proposal=$input->proposal;
+
+  $query=mysqli_query($connection, "INSERT INTO bids (project_id, client_id, expert_id,amount,proposal)
+  VALUES ('$project_id','$client_id','$expert_id','$amount','$proposal')" );
+  if($query){echo json_encode("the expert has successfully created a new profile");}
+});
+
+
+
 
 
 
