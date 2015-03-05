@@ -298,8 +298,12 @@ $app->get('/view_bid:id', function ($id) use($app,$connection){
   $input = json_decode($body);
   //here $id is the project id.. We will retrieve bid details based on project id
 
-  
+$query=mysqli_query($conenction,"SELECT * FROM bids where project_id='$id'");
+$data=mysqli_fetch_array($query);
 
+echo json_encode($data);
+
+$app->response()->header('Content-Type', 'application/json');
 
 
 
