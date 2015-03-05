@@ -277,7 +277,7 @@ $app->get('/profile_expert',function () use ($app,$connection) {
 });
 
 
-$app->put('/add_bid', function () use ($app,$connection) {
+$app->post('/add_bid', function () use ($app,$connection) {
   $request = $app->request();
   $body = $request->getBody();
   $input = json_decode($body);
@@ -292,6 +292,21 @@ $app->put('/add_bid', function () use ($app,$connection) {
   if($query){echo json_encode("Bid has been placed");}
 });
 
+$app->get('/view_bid:id', function ($id) use($app,$connection){
+  $request = $app->request();
+  $body = $request->getBody();
+  $input = json_decode($body);
+  //here $id is the project id.. We will retrieve bid details based on project id
+
+  
+
+
+
+
+
+
+
+});
 
 
 
