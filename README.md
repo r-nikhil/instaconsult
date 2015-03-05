@@ -47,7 +47,8 @@ Finished API Endpoints.<br>
 
 17)/add_bid. POST request. Check the code for values you have to send.
 18)/view_bid:id. Get request. Here the id is project id. The frontend has to keep track of which project the user is searching for.
-
+<h1>Comments</h1>
+19)/add_comment. POST request. Check the code for details
 
 
 
