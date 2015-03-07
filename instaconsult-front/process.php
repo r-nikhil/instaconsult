@@ -3,12 +3,12 @@ include "connection.php";
 
 $email= $_POST["email"];
 $sql = "INSERT INTO email (email_id) VALUES ('$email')";
-
-if(!isset($email) || trim($email) == '')
-{
-  echo "You did not fill anything";
-}
-else{
+//
+// if(!isset($email) || trim($email) == '')
+// {
+//   echo "You did not fill anything";
+// }
+// else{
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 
@@ -24,7 +24,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 
 
 
-}
+// }
 mysqli_close($connection);
 
 ?>
