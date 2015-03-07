@@ -8,7 +8,7 @@ if(!isset($email) || trim($email) == '')
 {
   echo "You did not fill anything";
 }
-else{s
+else{
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 
