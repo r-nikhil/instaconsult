@@ -4,12 +4,27 @@ include "connection.php";
 $email= $_POST["email"];
 $sql = "INSERT INTO email (email_id) VALUES ('$email')";
 
-if (mysqli_query($connection, $sql)) {
-  echo "New record created successfully";
+if(!isset($email) || trim($email) == '')
+{
+  echo "You did not fill anything";
+}
+else{s
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+
+  if (mysqli_query($connection, $sql)) {
+    echo "Your email has been added to the database";
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
+
 } else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  echo("$email is not a valid email address");
 }
 
+
+
+}
 mysqli_close($connection);
 
 ?>
